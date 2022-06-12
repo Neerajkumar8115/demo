@@ -27,76 +27,123 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 47, 51, 246),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(children: [
-            Center(
+        backgroundColor: Color.fromARGB(255, 47, 51, 246),
+        body: ListView(padding: EdgeInsets.all(15.0), children: [
+          Column(children: const [
+            Text(
+              "Get Permision",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 36,
+              ),
+            ),
+          ]),
+          // ignore: sort_child_properties_last
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 114),
+            child: Text(
+              'Send request to get started',
+              style: TextStyle(
+                fontSize: 17.0,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(children: const [
+            Text(
+              'Firstname',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ]),
+          Center(
+            child: TextField(
+              decoration: InputDecoration(
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
+                filled: true,
+                fillColor: Colors.white,
+                hintText: '@ Name',
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Row(children: const [
+            Text(
+              'Lastname',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ]),
+          Center(
+            child: TextField(
+              decoration: InputDecoration(
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
+                filled: true,
+                fillColor: Colors.white,
+                hintText: 'Surname',
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(children: const [
+            Text(
+              'Date of Birth',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ]),
+          Center(
+            child: ElevatedButton(
+              onPressed: () {}, //=> selectedDate(context),
               child: Text(
-                "Get Permision",
+                'date of birth',
                 style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 40,
+                  color: Colors.black,
                 ),
               ),
-            ),
-            SizedBox(
-              // ignore: sort_child_properties_last
-              child: Text(
-                'Send request to get started',
-                style: TextStyle(
-                  fontSize: 18.0,
-                ),
-              ),
-              height: 20,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: 'Name',
-                ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                padding: EdgeInsets.symmetric(horizontal: 180, vertical: 20),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14)),
               ),
             ),
-            SizedBox(
-              height: 20,
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Row(children: const [
+            Text(
+              'Gender',
+              style: TextStyle(color: Colors.white, fontSize: 28),
             ),
-            Center(
-              child: TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: 'Surname',
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: ElevatedButton(
-                onPressed: () {}, //=> selectedDate(context),
-                child: Text(
-                  'date of birth',
-                ),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 15,
-            ),
+          ]),
+          SizedBox(
+            height: 10,
+          ),
+          Row(children: const [
             ChoiceChip(
               label: Text(
                 'male',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 15,
                   color: Color.fromARGB(255, 4, 50, 87),
                 ),
               ),
@@ -104,34 +151,45 @@ class _HomePageState extends State<HomePage> {
               selected: true,
             ),
             SizedBox(
-              height: 10,
+              width: 10,
             ),
             ChoiceChip(
               label: Text(
                 'female',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 15,
                   color: Color.fromARGB(255, 4, 50, 87),
                 ),
               ),
               selectedColor: Colors.white,
               selected: true,
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: 'Email',
-                ),
+          ]),
+
+          SizedBox(
+            width: 10,
+          ),
+          Row(children: [
+            Text(
+              'Email',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ]),
+          Center(
+            child: TextField(
+              decoration: InputDecoration(
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
+                filled: true,
+                fillColor: Colors.white,
+                hintText: 'Email',
               ),
             ),
-          ]),
-        ),
-      ),
-    );
+          ),
+        ]));
   }
 }
