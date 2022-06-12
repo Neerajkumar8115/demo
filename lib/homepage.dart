@@ -84,6 +84,9 @@ class _HomePageState extends State<HomePage> {
                 child: Text(
                   'date of birth',
                 ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
+                ),
               ),
             ),
             SizedBox(
